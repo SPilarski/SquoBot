@@ -45,7 +45,7 @@ async def check_stream_status(channel):
         stream_data = await get_streamer_status(username, TWITCH_CLIENT_ID, twitch_token)
 
         if stream_data and not streamer_statuses[username]:
-            await channel.send(f'{username} jest online https://www.twitch.tv/{username}')
+            await channel.send(f'{username} odpalił stream! https://www.twitch.tv/{username}')
             streamer_statuses[username] = True
         elif not stream_data:
             streamer_statuses[username] = False
